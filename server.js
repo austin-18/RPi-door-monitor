@@ -6,7 +6,7 @@ const path = require('path');
 // importing connectDB method from db.js to connect to MongoDB
 const connectDB = require('./config/db');
 
-const { logDoorOpen } = require('./controllers/doors'); 
+const { logDoorOpen } = require('./controllers/door.js'); 
 
 // const serveStatic = require('serveStatic')
 
