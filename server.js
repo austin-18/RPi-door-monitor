@@ -25,7 +25,7 @@ var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 // var highPin = new Gpio(16, 'high'); //use GPIO pin 16 as high output for input into GPIO pin 16
 // var lowPin = new Gpio(15, 'low'); //use GPIO pin 16 as high output for input into GPIO pin 16
 
-const led = new Gpio(16, 'out');       // Export GPIO17 as an output
+const led = new Gpio(17, 'out');       // Export GPIO17 as an output
 
 // Toggle the state of the LED connected to GPIO17 every 200ms
 const iv = setInterval(_ => led.writeSync(led.readSync() ^ 1), 200);
