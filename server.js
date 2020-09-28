@@ -49,10 +49,10 @@ setTimeout(_ => {
 //   } //turn LED on or off depending on the button state (0 or 1)
 // });
 
-function unexportOnClose() { //function to run when exiting program
-  // doorSwitch.unexport(); // Unexport Button GPIO to free resources
-  highPin.unexport(); // Unexport Button GPIO to free resources
-  lowPin.unexport();
-};
+// function unexportOnClose() { //function to run when exiting program
+//   // doorSwitch.unexport(); // Unexport Button GPIO to free resources
+//   highPin.unexport(); // Unexport Button GPIO to free resources
+//   lowPin.unexport();
+// };
 
-process.on('SIGINT', unexportOnClose); //function to run when user closes using ctrl+c
+// process.on('SIGINT', unexportOnClose); //function to run when user closes using ctrl+c
