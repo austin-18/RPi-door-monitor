@@ -35,16 +35,16 @@ doorSwitch.watch(function (err, value) { //Watch for hardware interrupts on door
   if(value===0){
     //logDoorOpen();
     console.log('Door was opened...')
+    await sleep(1000)
   } //turn LED on or off depending on the button state (0 or 1)
   else if(value===1){
     console.log('Door was closed...')
+    await sleep(1000)
   }
 });
 
 function unexportOnClose() { //function to run when exiting program
-  // doorSwitch.unexport(); // Unexport Button GPIO to free resources
-  highPin.unexport(); // Unexport Button GPIO to free resources
-  lowPin.unexport();
+  doorSwitch.unexport(); // Unexport Button GPIO to free resources
 };
 
 process.on('SIGINT', unexportOnClose); //function to run when user closes using ctrl+c
