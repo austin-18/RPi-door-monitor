@@ -24,6 +24,10 @@ console.log('Initializing GPIO....')
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 var doorSwitch = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
+function sleep(arg) {
+  console.log(arg);
+}
+
 console.log('GPIO Initialized.')
 console.log('Watching Door...')
 
@@ -34,12 +38,12 @@ doorSwitch.watch(function (err, value) { //Watch for hardware interrupts on door
   }
   if(value===0){
     //logDoorOpen();
-    console.log('Door was opened...')
-    await sleep(1000)
+    setTimeout(sleep, 2000, 'Door was opened...');
+    // console.log('Door was opened...')
   } //turn LED on or off depending on the button state (0 or 1)
   else if(value===1){
-    console.log('Door was closed...')
-    await sleep(1000)
+    setTimeout(sleep, 2000, 'Door was closed...');
+    // console.log('Door was closed...')
   }
 });
 
