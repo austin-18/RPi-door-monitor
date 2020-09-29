@@ -14,7 +14,7 @@ const { logDoorOpen } = require('./controllers/door.js');
 dotenv.config({ path: './config/config.env'});
 
 // connectDB() method must be somewhere under the line that loading the environment variables config file (lines above)
-connectDB();
+// connectDB();
 
 // Set up GPIO data here:
 
