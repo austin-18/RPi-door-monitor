@@ -22,7 +22,7 @@ dotenv.config({ path: './config/config.env'});
 
 console.log('Initializing GPIO....')
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
-var doorSwitch = new Gpio(17, 'in', 'both', {debounceTimeout: 10}); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
+var doorSwitch = new Gpio(17, 'in', 'both', {debounceTimeout: 50}); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
 function sleep(arg) {
   console.log(arg);
