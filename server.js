@@ -14,7 +14,7 @@ const { logDoorOpen } = require('./controllers/door.js');
 dotenv.config({ path: './config/config.env'});
 
 // connectDB() method must be somewhere under the line that loading the environment variables config file (lines above)
-// connectDB();
+connectDB();
 
 // Set up GPIO data here:
 
@@ -24,9 +24,6 @@ console.log('Initializing GPIO....')
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 var doorSwitch = new Gpio(17, 'in', 'both', {debounceTimeout: 50}); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
-function sleep(arg) {
-  console.log(arg);
-}
 
 console.log('GPIO Initialized.')
 console.log('Watching Door...')
@@ -37,7 +34,7 @@ doorSwitch.watch(function (err, value) { //Watch for hardware interrupts on door
   return;
   }
   if(value===0){
-    //logDoorOpen();
+    logDoorOpen();
     console.log('Door was opened...')
   } //turn LED on or off depending on the button state (0 or 1)
   else if(value===1){
