@@ -22,7 +22,7 @@ connectDB();
 
 console.log('Initializing GPIO....')
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
-var doorSwitch = new Gpio(17, 'in', 'both', {debounceTimeout: 50}); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
+var doorSwitch = new Gpio(17, 'in', 'both', {debounceTimeout: 200}); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
 
 console.log('GPIO Initialized.')
@@ -34,8 +34,8 @@ doorSwitch.watch(function (err, value) { //Watch for hardware interrupts on door
   return;
   }
   if(value===0){
-    let value = logDoorOpen();
-    console.log(value)
+    const log = logDoorOpen();
+    console.log(log)
     console.log('Door was opened...')
   } //turn LED on or off depending on the button state (0 or 1)
   else if(value===1){

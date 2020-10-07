@@ -23,4 +23,5 @@ exports.logDoorOpen=()=>{
         if (err) return handleError(err);
         // saved!
     });
+    return log
 }
