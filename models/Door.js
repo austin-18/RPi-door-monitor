@@ -5,7 +5,8 @@ const path = require('path');
 const DoorSchema = new mongoose.Schema({
     openDate: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
+        required: true
     }
 }, {
     strict: 'throw',
