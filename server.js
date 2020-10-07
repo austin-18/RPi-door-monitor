@@ -34,7 +34,8 @@ doorSwitch.watch(function (err, value) { //Watch for hardware interrupts on door
   return;
   }
   if(value===0){
-    logDoorOpen();
+    let value = logDoorOpen();
+    console.log(value)
     console.log('Door was opened...')
   } //turn LED on or off depending on the button state (0 or 1)
   else if(value===1){
