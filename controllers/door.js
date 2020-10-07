@@ -14,5 +14,5 @@ const path = require('path');
 exports.logDoorOpen = asyncHandler(async () => {
     const doorOpen = await Door.create()
 
-    return doorOpen
+    // return doorOpen
 });
