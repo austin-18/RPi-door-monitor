@@ -17,7 +17,7 @@ const path = require('path');
 //     // return doorOpen
 // });
 
-exports.logDoorOpen(){
+exports.logDoorOpen=()=>{
     const log = new Door();
     log.save(function (err) {
         if (err) return handleError(err);
