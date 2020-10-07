@@ -11,8 +11,16 @@ const path = require('path');
 
 // Controller files conain the Methods for each route - creates functionality for the route
 
-exports.logDoorOpen = asyncHandler(async () => {
-    const doorOpen = await Door.create()
+// exports.logDoorOpen = asyncHandler(async () => {
+//     const doorOpen = await Door.create()
 
-    // return doorOpen
-});
+//     // return doorOpen
+// });
+
+exports.logDoorOpen(){
+    const log = new Door();
+    log.save(function (err) {
+        if (err) return handleError(err);
+        // saved!
+    });
+}
